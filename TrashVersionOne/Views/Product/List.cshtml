@@ -1,0 +1,28 @@
+﻿@model ProductsListViewModel
+
+@foreach (var p in Model.Products)
+{
+    @Html.Partial("ProductSummary", p)
+}
+
+<div class="row">
+
+        <div id="categories" class="col-xs-12 col-md-6" style="position: absolute; left: 1px; width:150px;">
+
+            @await Component.InvokeAsync("NavigationMenu")
+
+        </div>
+    </div>
+
+        <div page-model="Model.PagingInfo" page-action="List" page-classes-enabled="true"
+             page-class="btn" page-class-normal="btn-secondary"
+             page-class-selected="btn-primary" page-url-category="@Model.CurrentCategory"
+             class="btn-group pull-right m-1">
+
+
+        </div>
+
+
+
+
+

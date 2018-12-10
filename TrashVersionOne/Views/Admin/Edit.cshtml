@@ -1,0 +1,79 @@
+﻿@model TrashVersionOne.Models.ProductDetails
+
+@{
+    ViewData["Title"] = "Edit";
+
+}
+
+@section Scripts {
+    <style>
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .custom-file-upload {
+            width: 135px;
+            background: #3f3f3f;
+            color: white;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+            box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.8);
+        }
+    </style>
+
+}
+
+
+<h2>Edit</h2>
+
+
+<div class="row style=" margin-left:0px"">
+    <div class="col col-xs-12 col-sm-6 col-md-5 col-lg-4 center">
+        <form asp-action="Edit" style="width: 80%; margin: auto;">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                @*<label asp-for="Product_Name" class="control-label"></label>*@
+                <input asp-for="Product_Name" class="form-special whiteOnBlack" style="width:100%; margin-bottom:10px;" placeholder="Name" />
+                <span asp-validation-for="Product_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*<label asp-for="Product_Description" class="control-label"></label>*@
+                <input asp-for="Product_Description" class="form-special whiteOnBlack" style="width:100%; margin-bottom:10px;" placeholder="Description" />
+                <span asp-validation-for="Product_Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*<label asp-for="Amount" class="control-label"></label>*@
+                <input asp-for="Amount" class="form-special whiteOnBlack" style="width:100%; margin-bottom:10px;" placeholder="Price" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*<label asp-for="Product_category" class="control-label"></label>*@
+                <input asp-for="Product_category" class="form-special whiteOnBlack" style="width:100%; margin-bottom:10px;" placeholder="Category" />
+                <span asp-validation-for="Product_category" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                @*<label asp-for="ProductPicture" class="control-label"></label>*@
+                <label class="custom-file-upload " style="margin-top:30px">
+                    <input type="file" name="files" multiple asp-for="ProductPicture" />
+                    <i class="fa fa-cloud-upload"></i> Choos an Image
+                </label>
+                @*<input type="file" name="files" multiple asp-for="ProductPicture" />*@
+                <span asp-validation-for="ProductPicture" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" value="Save" class="btn btn-default"
+                       style=" width: 135px; height: 30px; margin-top: -10px; border-radius: 0px; border: none;
+                       background: green; color:white; padding-top: 5px; box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.8);" />
+            </div>
+            <div class="text-center">
+                <a asp-action="Check">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

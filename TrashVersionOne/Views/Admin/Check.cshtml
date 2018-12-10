@@ -1,0 +1,258 @@
+﻿@model IEnumerable<ProductDetails>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Check";
+}
+@*@section customHead {
+
+    <link href="~/css/FormStyling.css" rel="stylesheet" />
+    
+}*@
+
+<div>
+<div id="wrapper" class="" style="padding-left: 0px !important;background-size:contain; background-image:url('../../../../../images/4k-wallpaper-blur-botanical.jpg')">
+    <!-- Sidebar -->
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <div id="main-content" style=" margin-top: 10px;">
+
+            <div class="content-body">
+                <div class="col-lg-12 main-box-container">
+
+                    <div class="box-head clearfix" style="margin-top:30px">
+                        @*<h1 class="pull-left"> Customer Account</h1>*@
+                        <br /> <div class="actions pull-right">
+                            <a asp-action="Create" class="btn btn-danger"
+                               style=" margin-top:20px; margin-right:30px; width: 100px; height: 30px; margin-top: -20px; border-radius: 0px; border: none;
+                                background: orange; color:white; padding-top: 5px; box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.8);">Add Product</a>
+                        </div>
+                    </div>
+                    <div class="box-head clearfix">
+
+                        <div class="box-content">
+                            <div class="table-container">
+
+                                <table id="inventories" class="table is-datatable">
+                                    <thead>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <div class="row" style=" width: 70%; margin: auto; margin-bottom:50px;">
+                                                <div >
+                                                    <div class="col-lg-4" style="float:left; z-index:99 ; position:absolute; background:white; max-height:320PX; max-width:300px; padding:10px 0px 10px 0px; margin-top:15px;box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.8);"><img src="@item.ProductPicture"  height="320" asp-append-version="true" /></div>
+                                                    <div class="col-lg-10 columns text-center" style="margin-left:20%; float:right; padding-left:40%; padding-right:10%; background:rgba(0,0,0,0.8)">
+                                                        <div>
+                                                            <br />
+                                                            <h1 style="color:white;" class="text-left">@item.Product_Name</h1> <br />
+                                                            <h4 class="text-left" style="color:forestgreen">@item.Amount.ToString("c")<br /></h4>
+                                                            <p style="word-wrap: break-word;color:white;" class="text-left">@item.Product_Description<br /></p>
+                                                            <br /><br /><br />
+
+                                                        </div>
+                                                    </div>
+                                                    <div style="
+                                                    margin-top: -10px;
+                                                    float: right;
+                                                    z-index: 99;
+                                                    position: relative;
+                                                    width: 40%;">
+                                                        <form asp-action="Delete" method="post">
+                                                            <a asp-action="Edit" class="btn btn-sm btn-danger"
+                                                               style="color:white; width: 150px; height: 25px; border-radius: 0px; border: none;
+                                                                background: green; padding-top: 5px; box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.8);"
+                                                               asp-route-productId="@item.Id">
+                                                                Edit
+                                                            </a><br /><br />
+                                                            <input type="hidden" name="ProductID" value="@item.Id" />
+                                                            <button type="submit" class="btn btn-danger btn-sm"
+                                                                    style="width: 150px; height: 25px; margin-top: -20px; border-radius: 0px; border: none;
+                                                                background: red; padding-top: 5px; box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.8);">
+                                                                Delete
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+
+                                            @*<tr>
+                                                <td class="text-center">
+
+                                                    <img src="@item.ProductPicture" width="200" height="200" asp-append-version="true" />
+                                                </td>
+                                                <td>
+                                                    @item.Product_Name <br />
+                                                    @item.Amount.ToString("c")<br />
+                                                    @item.Product_Description<br />
+                                                    <form asp-action="Delete" method="post">
+                                                        <a asp-action="Edit" class="btn btn-sm btn-danger"
+                                                           asp-route-productId="@item.Id">
+                                                            Edit
+                                                        </a><br /><br />
+                                                        <input type="hidden" name="ProductID" value="@item.Id" />
+                                                        <button type="submit" class="btn btn-danger btn-sm">
+                                                            Delete
+                                                        </button>
+                                                    </form>
+                                                </td>*@
+                                            @*<td>
+                                                    @item.Product_Description
+                                                </td>
+
+                                                <td class="text-right">@item.Amount.ToString("c")</td>
+                                                <td class="text-center">
+                                                    <form asp-action="Delete" method="post">
+                                                        <a asp-action="Edit" class="btn btn-sm btn-danger"
+                                                           asp-route-productId="@item.Id">
+                                                            Edit
+                                                        </a><br /><br />
+                                                        <input type="hidden" name="ProductID" value="@item.Id" />
+                                                        <button type="submit" class="btn btn-danger btn-sm">
+                                                            Delete
+                                                        </button>
+                                                    </form>
+                                                </td>*@
+                                            @*</tr>*@
+                                        }
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modals -->
+            <div id="add-user" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="row">
+
+
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <div id="add-fuel-type" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form id="product_type_info" action="">
+                            <input type="hidden" name="csrfmiddlewaretoken" value="EWOIvVzzLzQnlowipCXQAQ49b9rS4aNE">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                <h4 class="modal-title">Set Fuel Type</h4>
+                            </div>
+                            <div class="modal-body clearfix">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label>please input comma separated values:</label>
+                                        <div class="bootstrap-tagsinput"><input type="text" placeholder=""></div><input type="text" id="fuel_type" value="" name="fuel_type" class="form-control" data-role="tagsinput" style="display: none;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary" onclick="add_fuel_type()">Save</button>
+                            </div>
+                        </form>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <div id="add-inventory" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form id="inven_hedge_info" action="">
+                            <input type="hidden" name="csrfmiddlewaretoken" value="EWOIvVzzLzQnlowipCXQAQ49b9rS4aNE">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                <h4 class="modal-title">Add Inventory</h4>
+                            </div>
+                            <div class="modal-body clearfix">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label for="">name</label>
+                                        <input type="text" name="name" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">fuel type </label>
+                                        <select name="fuel_type" class="form-control"></select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">location</label>
+                                        <input type="text" name="location" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Identifier Number</label>
+                                        <input type="text" name="id_number" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">volume</label>
+                                        <input type="text" name="volume" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary" onclick="add_inventory('Inventory')">Save</button>
+                            </div>
+                        </form>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <div id="add-hedge-account" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form id="inven_hedge_info2" action="">
+                            <input type="hidden" name="csrfmiddlewaretoken" value="EWOIvVzzLzQnlowipCXQAQ49b9rS4aNE">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                <h4 class="modal-title">Add Hedge Account</h4>
+                            </div>
+                            <div class="modal-body clearfix">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label for="">name</label>
+                                        <input type="text" name="name" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">institution </label>
+                                        <input type="text" name="institution" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">account number </label>
+                                        <input type="text" name="id_number" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary" onclick="add_inventory('HedgeAccount')">Save</button>
+                            </div>
+                        </form>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+            <div id="variables" style="display:none">
+                <span id="current_account_id">30</span>
+            </div>
+            <!--
+                <div id="remove_user" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="bootbox-body">Are you sure you want to delete the items?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            -->
+
+        </div>
+    </div>
+    

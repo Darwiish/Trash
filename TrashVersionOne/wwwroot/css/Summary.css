@@ -1,0 +1,11 @@
+﻿.dl-horizontal dt{
+    white-space: normal;
+}
+
+.morecontent span {
+    display: none;
+}
+
+.morelink {
+    display: block;
+}

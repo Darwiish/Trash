@@ -1,0 +1,44 @@
+﻿@model ProductDetails
+@*<br /><br /><br />*@
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+@*<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>*@
+<link href="~/css/Summary.css" rel="stylesheet" />
+<script src="~/js/site.js"></script>
+
+<div class="card-columns view-group" style="margin-top: 70px;">
+    <div class="item col-xs-12 col-lg-4">
+        <div class="thumbnail card" style="min-height:350px">
+            <div class="image" style="margin-bottom:30px">
+                <a asp-controller="Product" asp-action="Details" asp-route-Id="@Model.Id">
+                    <img class="group list-group-image img-fluid" src="@Model.ProductPicture" style="min-height:300px" asp-append-version="true" />
+                </a>
+                <h5 class="card-title">
+                    <a asp-controller="Product" asp-action="Details" asp-route-Id="@Model.Id">
+                        @Model.Product_Name
+                    </a>
+                    <span class="" style="float:right">
+                        <big><strong>@Model.Amount.ToString("c")</strong></big>
+                    </span>
+                </h5>
+                <div class="caption" style="border-top:3px solid #808080; ">
+                    <p style="word-wrap: break-word; " class="card-text"> @Model.Product_Description.</p>
+                    <form id="@Model.Id" asp-action="AddToCart"
+                          asp-controller="Cart" method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <input type="hidden" name="returnUrl"
+                               value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                        <button type="submit"
+                                class="btn btn-success btn-sm pull-right" style="float:right">
+                            Add To Cart
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

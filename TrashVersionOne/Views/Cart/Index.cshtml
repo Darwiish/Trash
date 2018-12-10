@@ -1,0 +1,68 @@
+﻿@model CartIndexViewModel
+
+
+
+
+
+<div class="center" style="width:80%; margin-top:80px;">
+    <h2 style="color:white">Your cart</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr style="border-color:black">
+                <th style="background-color: black; border-color: black; color:white;">Quantity</th>
+                <th style="background-color: black; border-color: black; color:white;">Item</th>
+                <th style="background-color: black; border-color: black; color:white;" class="text-right">Price</th>
+                <th style="background-color: black; border-color: black; color:white;" class="text-right">Subtotal</th>
+                <th style="background-color: black; border-color: black; color:white;" class="text-right"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var line in Model.Cart.Lines)
+            {
+                <tr>
+                    <td style="background-color: white; border-color: white; color:black;" class="text-center">@line.Quantity</td>
+                    <td style="background-color: white; border-color: white; color:black;" class="text-left">@line.Product.Product_Name</td>
+                    <td style="background-color: white; border-color: white; color:black;" class="text-right">@line.Product.Amount.ToString("c")</td>
+                    <td style="background-color: white; border-color: white; color:black;" class="text-right">
+                        @((line.Quantity * line.Product.Amount).ToString("c"))
+                    </td>
+                    <td style="background-color: white; border-color: white; color:black;">
+                        <form asp-action="RemoveFromCart" method="post">
+                            <input type="hidden" name="ProductID"
+                                   value="@line.Product.Id" />
+                            <input type="hidden" name="returnUrl"
+                                   value="@Model.ReturnUrl" />
+                            <button type="submit" class="btn btn-sm btn-danger"
+                                    style=" width: 135px; height: 30px; margin-top: -10px; border-radius: 0px; border: none;
+                       background: red; color:white; padding-top: 5px; box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.8);">
+                                Remove
+                            </button>
+                        </form>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td style="background-color: white; border-color: white; color:black;" colspan="3" class="text-right">Total:</td>
+                <td style="background-color: white; border-color: white; color:black;" class="text-right">
+                    @Model.Cart.ComputeTotalValue().ToString("c")
+                </td>
+                <td style="background-color: white; border-color: white; color:black;" colspan="3" class="text-right"></td>
+            </tr>
+        </tfoot>
+    </table><br />
+</div>
+<div class="text-center">
+    <a class="btn btn-primary" asp-action="List" asp-controller="Product"
+       style=" width: 150px; height: 30px; margin-top: -10px; border-radius: 0px; border: none;
+            background: green; color:white; padding-top: 5px; box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.8);">
+        Continue shopping
+    </a>
+    <a class="btn btn-primary" asp-action="Checkout" asp-controller="Orders"
+       style=" width: 150px; height: 30px; margin-top: -10px; border-radius: 0px; border: none;
+             background: blue; color:white; padding-top: 5px; box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.8);">
+        Checkout
+    </a>
+</div>

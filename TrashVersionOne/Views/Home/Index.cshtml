@@ -1,0 +1,229 @@
+﻿
+@section Styles{
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/css/foundation.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/Style.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+}
+@*<div style="top: -200px">*@
+<div class="row hide-for-small-only ">
+    <div class="small-1 small-centered  columns">
+        <div class="row">
+
+        </div>
+    </div>
+</div>
+<div class="row topbar" style="background-color:none">
+    <div class="small-12 columns">
+        <br /><br /><br />
+        <div style="z-index: 100; position: absolute; top: 180px; margin: auto; left:40% "><img src="~/images/1.4-logo.png" width="200" height="40"></div>
+        <div style="z-index:100; position:absolute; top:40px;">
+            <p>
+                <h1 style="margin:350px; font-size:56px; font-family: 'BebasKai';  text-align:center">
+                    C R A F T I N G
+                </h1>
+            </p>
+        </div>
+        <div style="z-index:100; position:absolute; top:100px;">
+            <p>
+                <h1 style="margin:350px; font-size:46px; font-family: 'BebasKai';  text-align:center">
+                    WITH A PURPOSE
+                </h1>
+            </p>
+        </div>
+
+        <div style="z-index:100; position:absolute; top:480px; margin: auto; left:37% ">
+            <p>
+                <h1>
+                    <a href="" style="text-decoration:none; font-family: 'BebasKai'; font-size: 28px;" class="typewrite" data-period="2000" data-type='[  "Reuse, reduce, recycle", "Rethink what is trash", "Make new from used" ]'>
+                        <span class="wrap"></span>
+                    </a>
+                </h1>
+            </p>
+
+        </div>
+        <div style="z-index:100; position:absolute; top:580px; margin: auto; left:47%">
+            <img style="width:50px" src="~/images/ArrowBlack.png" />
+        </div>
+
+
+        <div style="position: center; z-index: -99; width: 100%; height: 100%; min-height:720px;">
+            <iframe frameborder="0" allow="autoplay" height="640px" width="100%"
+                    src="https://www.youtube.com/embed/urL1kKOBeqg?controls=0&autoplay=1&mute=1&showinfo=0&loop=1&ps=docs"></iframe>
+
+        </div>
+        <div class="center" style="color:white; width:80%; margin-bottom: 50px; padding:80px">
+           
+            <h1 class="text-center" style="color:white"> Hello There! </h1>
+            <br />
+            <p>
+                You just found Treasure Your Trash website. We are those, who believe that raw material is beautiful. We refuse to throw out and instead, insist on rethinking what we normally call trash.
+                A simple plastic spoon could be a resource for a lamp, your jars could live their second life as flower pots- all is the matter of your creativity.
+
+                
+            </p>
+            <p>
+                
+
+                On TYT you can take a step towards 0 waste life starting today, by;
+                selling your eco-products,   buying products with step-by-step guides for making them or simply by registering and joining the community.
+            </p>
+            <br />
+        </div>
+
+        @*?&controls=0?&autoplay=1*@
+
+        @*&nbsp;
+            <iframe style="padding-left:-10px!important;" width="1132" height="640" src="https://www.youtube.com/embed/urL1kKOBeqg?&autoplay=1"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>*@
+    </div>
+
+
+</div>
+<div class="row">
+    <div class="small-12 medium-6 columns height relative" style="background:white">
+        <h1 class="margined">
+            I'M A CREATOR
+        </h1>
+
+        <p class="margined">Hello, beautiful mind! Are you someone passionate about handcraft? Do you feel like you are the one amongst your friends who always has a better idea about how things should look? Great sense of style? Or maybe you are looking for another platform to share your inventions.</p>
+        @*<button style="position:absolute; bottom:20px; left:20px;" class="margined">SELL ON TYT</button>*@
+
+        <form id="Id" asp-action="check" asp-controller="admin" method="post">
+
+            <button type="submit"
+                    class="right " style="width:200px; height:50px; font-size: 18px; padding-top:15px; margin-right:20px;">
+                SELL ON TYT
+            </button>
+        </form>
+    </div>
+    <div class="small-12 medium-6 columns height relative" style="background-color: rgba(0, 0, 0, 0.6);">
+
+
+        <h2 class="margined" style="color:white; line-height:40px;margin-top:25px;">I'M IN LOVE WITH THE<br /> ENVIRONMENT.</h2>
+
+        @*<button style="position:absolute; bottom:20px; left:90px;" class="button-white margined ">SHOP NOW</button>*@
+        <form id="Id" asp-action="List" asp-controller="Product" method="post" style="margin:auto; width:40%; padding-top:100px; ">
+           
+            <button type="submit"
+                    style=" height:50px; font-size: 18px;  padding-top:15px; margin-right:20px;" class="button-white margined ">
+                Shop Now
+            </button>
+        </form>
+
+
+    </div>
+</div>
+@*<div class="seperator"></div>*@
+<div class="row" style="">
+    <div class="small-8 small-centered columns ">
+        <div style="margin: 7em 0px">
+            <div class="row">
+                <div class="small-12 medium-6  columns text-center"><img src="~/content/Spoon.jpg" alt="Alternate Text" /></div>
+                <div class="small-12 medium-6  columns ">
+                    <h1 style="color:black;  background-color:lightgreen;">WE HATE</h1>
+                    <div style="background:white; padding:5px;">
+                        <h1 style="color:black">WASTE</h1>
+                        <p>
+                            Would you ever consider these 3 pieces of plastic a piece of art? Would you think of them as beautiful, something that you could decorate your house with?  Well, probably not; otherwise you would have to be insane. But what is art without a drop of insanity?
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 medium-6  columns ">
+                    <p style="color:black; background-color:white; padding-bottom:10px; padding:5px">
+                        Treasure Your Trash is the name that speaks for our purpose.  We are the Mad Hatters looking for people who dare to think like us. We cooperate with creative makers that have the amazing ability of transforming what  is known as trash into diamonds.
+                    </p>
+                    <h1 style="background-color:lightgreen; margin-top:-20px;">WE REALLY DO</h1>
+                    <p style="background:white; padding:5px;">
+                        Here, sky is the limit! We highly encourage you to explore the store and support our creatives and LEARN about different ways of reusing your household waste by finding pieces that suit your taste. Don’t WASTE your time!.
+                        .
+                    </p>
+                </div>
+                <div class="small-12 medium-6  columns text-center "><img src="~/content/DSC_0143.jpg" alt="Alternate Text" /></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div style="padding: 7em 0px; background-color: rgba(0, 0, 0, 0.6);">
+    <div class="row">
+
+        <div class="small-10 small-centered columns ">
+            <div class="row">
+                <div class="medium-4 hide-for-small-only columns text-center">
+                    <img src="~/content/DSC_0161.jpg" alt="Alternate Text" />
+
+                </div>
+                <div class=" small-12 medium-4   columns text-center">
+                    <img src="~/content/DSC_0100.jpg" alt="Alternate Text" />
+                </div>
+                <div class=" medium-4  hide-for-small-only  columns text-center">
+                    <img src="~/content/DSC_0113.jpg" alt="Alternate Text" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-10 small-centered columns text-center ">
+            <form id="Id" asp-action="List" asp-controller="Product" method="post">
+
+                <button type="submit"
+                        class="margined ">
+                    Shop More
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <div class="row">
+        <div class="small-12  columns text-center" style="height:5em; background-color:white ;transform:translateY(4em)">
+
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="small-10 small-centered columns">
+
+            <div class="row">
+                <div class="small-6  columns text-center">
+                    <img src="~/images/3.PNG" alt="Alternate Text" />
+                    
+                </div>
+                <div class="small-6  columns text-left">
+                    <h1>MEET</h1>
+                    <div style="background-color:rgba(0, 0, 0, 0.6);">
+                        <h1 style="color:white;">THE CREATOR</h1>
+                        <p style="color:white;">"For me, personally, there is no right or wrong when it comes to the environment. You either are a decent human being, or not. I craft with passion. With passion towards the environment.".</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row ">
+    <div class="small-1 small-centered columns">
+        <div class="row">
+            <div class="small-8 small-centered columns topbar-diamond">
+
+                <img src="~/images/diamond.png" alt="Alternate Text" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row topbar">
+</div>
+
+
+

@@ -1,0 +1,86 @@
+﻿@model IEnumerable<TrashVersionOne.Models.ProductDetails>
+@*@using Microsoft.AspNetCore.Http.Connections
+@using TrashVersionOne.Models
+@using System.Collections.Generic
+@using System.Linq
+@using Microsoft.AspNetCore.Http*@
+
+
+
+
+@{
+    ViewData["Title"] = "ProductDetails";
+}
+
+<h2>ProductDetails</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductPicture)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                <img src="@item.ProductPicture" width="200" height="200" asp-append-version="true" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product_Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product_category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+
+            <td>
+                <form id="Id" asp-action="AddToCart" asp-controller="Cart" method="post">
+                    <input type ="hidden" asp-for="@item.Id" />
+                    <input type="hidden" name="returnUrl"
+                           value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                    <button type="submit"
+                            class="btn btn-success btn-sm pull-right" style="float:right">
+                        Add To Cart
+                    </button>
+                </form>
+
+                @*<a asp-action="OrderNow" asp-route-id="@item.Id">Shop Now</a>*@
+                @*<a asp-action="Details" asp-route-id="@item.Id">Details</a>
+        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
+            </td>
+        </tr>
+
+        }
+
+    </tbody>
+</table>
+
+
+
+
+
+
+

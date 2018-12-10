@@ -1,0 +1,61 @@
+﻿@model ProductDetails
+
+
+
+
+<v id="wrapper" class="" style="padding-left: 0px !important;background-size:contain; background-image:url('../../../../../images/4k-wallpaper-blur-botanical.jpg')">
+    <!-- Sidebar -->
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <div id="main-content" style=" margin-top: 10px;">
+
+            <div class="content-body">
+                <div class="col-lg-12 main-box-container">
+
+                    <div class="box-head clearfix" style="margin-top:30px">
+                        @*<h1 class="pull-left"> Customer Account</h1>*@
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                    <div class="col-sm-0" style="float:left;">
+                        <img style="display:none;" src="~/images/1.PNG" class="col-sm-0" />
+                    </div>
+                    <div class="table-container col-sm-12 col-lg-10 " style="float:right;"</div>
+
+                     
+                        <table id="inventories" class="table is-datatable ">
+                            <thead>
+                                <div class="row col-sm-12 col-lg-8 " style=" margin: auto; margin-bottom:50px;">
+
+                                    <div class="col-lg-4" style="float:left; z-index:99 ; position:absolute; background:white; max-width:300px; padding:10px 0px 10px 0px; margin-top:100px;box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.8);"><img src="@Model.ProductPicture" style="min-height: 250px; " width="200" height="200" asp-append-version="true" /></div>
+                                    <div class="col-lg-10 columns text-center " style="margin-left:20%; float:right; padding-left:40%; padding-right:10%; height:550px; background:rgba(0,0,0,0.8)">
+                                        <div>
+                                            <br />
+                                            <h1 style="color:white;" class="text-left flex-sm-row">@Model.Product_Name</h1> <br />
+                                            <h4 class="text-left" style="color:forestgreen">@Model.Amount.ToString("c")<br /></h4>
+                                            <p style="word-wrap: break-word;color:white;" class="text-left">@Model.Product_Description<br /></p>
+                                            <br /><br /><br />
+
+                                        </div>
+
+                                        <p class="btn btn-group pull-right">
+                                            <a asp-controller="Product" asp-action="List" style="color:white; width: 150px; height: 25px; border-radius: 0px; border: none;
+                                                                background: green; padding-top: 5px; margin-bottom:10px; box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.8);" class="btn btn-default">Show all Products</a>
+                                            <a class="btn btn-success" id="cartButton" style="color:white; width: 150px; height: 25px; border-radius: 0px; border: none;
+                                                                background: green; padding-top: 5px; box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.8);" asp-controller="Cart" asp-action="AddToCart" asp-route-Id="@Model.Id">
+                                                Add @Model.Product_Name to cart
+                                            </a>
+                                    </div>
+                                </div>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

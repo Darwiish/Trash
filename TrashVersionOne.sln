@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrashVersionOne", "TrashVersionOne\TrashVersionOne.csproj", "{757F0E32-2B12-4FD0-AB3E-964F47D78D71}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileUploadControl", "FileUploadControl\FileUploadControl.csproj", "{F330B72A-CF7A-438A-A83F-EC8F075053C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{757F0E32-2B12-4FD0-AB3E-964F47D78D71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{757F0E32-2B12-4FD0-AB3E-964F47D78D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{757F0E32-2B12-4FD0-AB3E-964F47D78D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{757F0E32-2B12-4FD0-AB3E-964F47D78D71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F330B72A-CF7A-438A-A83F-EC8F075053C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F330B72A-CF7A-438A-A83F-EC8F075053C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F330B72A-CF7A-438A-A83F-EC8F075053C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F330B72A-CF7A-438A-A83F-EC8F075053C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {149942C2-6D89-41EE-94C2-164A5F714B35}
+	EndGlobalSection
+EndGlobal

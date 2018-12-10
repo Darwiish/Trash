@@ -1,0 +1,22 @@
+﻿@model IEnumerable<string>
+<a class="btn btn-block btn-light button-white"
+style=" margin-bottom:8px; color:white; width: 150px; height: 45px; border-radius: 0px; border: none;
+        background: black; padding-bottom: 35px; box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.8);"
+   asp-action="List"
+   asp-controller="Product"
+   asp-route-category="">
+    <h5>CATEGORIES</h5>
+</a>
+@foreach (string category in Model)
+{
+    <a class="btn btn-block btn-light button-white"
+style="color:black; width: 150px; height: 35px; border-radius: 0px; border: none;
+        background: white; padding-bottom: 25px;  box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.8);"
+       aps-action="List"
+       asp-controller="Product"
+       asp-route-category="@category"
+       asp-route-productPage="1">
+        @category
+    </a>
+
+}

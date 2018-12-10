@@ -1,0 +1,57 @@
+﻿@page
+@model RegisterModel
+@*@{
+    ViewData["Title"] = "Register";
+}*@
+
+@*<h2>@ViewData["Title"]</h2>*@
+
+@section Styles {
+
+    <link href="~/css/FormStyling.css" rel="stylesheet" />
+
+
+}
+
+<br /><br /><br />
+
+
+<div class="row bg">
+    <div class="col col-xs-12 col-sm-6 col-md-5 col-lg-4 center">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <div class="center-basic100">
+                <br />
+                <h1 style="font-size:40px" class="whiteOnBlack  text-center">HELLO, THERE!</h1><br />
+                <h4 class="whiteOnBlack center-basic text-center">Join to TYT</h4>
+                <br /><br />
+            </div>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group center-basic">
+                @*<label asp-for="Input.Email"></label>*@
+                <input asp-for="Input.Email" class="form-special whiteOnBlack" style="width:100%; margin-bottom:10px;" type="email" placeholder="Email" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group center-basic">
+                @*<label asp-for="Input.Password"></label>*@
+                <input asp-for="Input.Password" class="form-special whiteOnBlack" style="width:100%; margin-bottom:10px;" type="password" placeholder="Password" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group center-basic">
+                @*<label asp-for="Input.ConfirmPassword"></label>*@
+                <input asp-for="Input.ConfirmPassword" class="form-special whiteOnBlack" style="width:100%" type="password" placeholder="Confirm password" />
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+
+                <input asp-for="Input.Password" class="form-control,form-special" type="password" placeholder="Password" style="visibility: hidden" />
+            </div>
+
+
+
+            <button type="submit" class="btn btn-default center-block" style="margin-bottom:30px;">Register</button>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,63 @@
+﻿@model Order
+
+<br />  <br />  <br />
+<div style="margin-top:100px; width: 80%; margin: auto;">
+    <div class="col col-xs-12 col-sm-6 col-md-5 col-lg-6 center" style="color:white">
+        <div style="width: 80%; margin: auto;">
+            <h2>Check out now</h2>
+            <p>Please enter your details, and we'll ship your goods right away!</p>
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+        <form asp-action="Checkout" method="post" style="width: 80%; margin: auto;">
+
+            <div>
+                <div class="form-group">
+                    <input asp-for="Name" class="form-special whiteOnBlack" style="width:100%; margin-bottom:10px; max-width:inherit" placeholder="Name" />
+                </div>
+            </div>
+
+            <div style="float:left; width:100%"><h3>Address</h3></div>
+            <div>
+
+                <div class="form-group">
+                    <input asp-for="Line1" class="form-special whiteOnBlack" style="width:100%; margin-bottom:10px; max-width:inherit" placeholder="Line 1" />
+                </div>
+                <div class="form-group">
+                    <input asp-for="Line2" class="form-special whiteOnBlack" style="width:100%; margin-bottom:10px; max-width:inherit" placeholder="Line 2" />
+                </div>
+                <div class="form-group">
+                    <input asp-for="Line3" class="form-special whiteOnBlack" style="width:100%; margin-bottom:10px; max-width:inherit" placeholder="Line 3" />
+                </div>
+                <div class="form-group">
+                    <input asp-for="City" class="form-special whiteOnBlack" style="width:100%; margin-bottom:10px; max-width:inherit" placeholder="City" />
+                </div>
+                <div class="form-group">
+                    <input asp-for="State" class="form-special whiteOnBlack" style="width:100%; margin-bottom:10px; max-width:inherit" placeholder="State" />
+                </div>
+                <div class="form-group">
+                    <input asp-for="Zip" class="form-special whiteOnBlack" style="width:100%; margin-bottom:10px; max-width:inherit" placeholder="Zip" />
+                </div>
+                <div class="form-group">
+                    <input asp-for="Country" class="form-special whiteOnBlack" style="width:100%; margin-bottom:10px; max-width:inherit" placeholder="Country" />
+                </div>
+            </div>
+            <div style="float:left; width:100%">
+                <h3>Options</h3>
+            </div>
+            <div>
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="GiftWrap" /> Gift wrap these items
+                    </label>
+                </div>
+                <div class="text-center">
+                    <input class="btn btn-primary" type="submit" value="Complete Order"
+                           style=" width: 135px; height: 30px; margin: 10px 0px 10px; border-radius: 0px; border: none;
+                       background: blue; color:white; padding-top: 5px; box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.8);" />
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
