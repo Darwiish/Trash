@@ -229,8 +229,6 @@ namespace TrashVersionOne.Data.Migrations
                     b.Property<string>("Name")
                         .IsRequired();
 
-                    b.Property<int?>("ProductDetailsId");
-
                     b.Property<bool>("Shipped");
 
                     b.Property<string>("State")
@@ -239,8 +237,6 @@ namespace TrashVersionOne.Data.Migrations
                     b.Property<string>("Zip");
 
                     b.HasKey("OrderID");
-
-                    b.HasIndex("ProductDetailsId");
 
                     b.ToTable("Orders");
                 });
@@ -346,13 +342,6 @@ namespace TrashVersionOne.Data.Migrations
                     b.HasOne("TrashVersionOne.Models.ProductDetails", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId");
-                });
-
-            modelBuilder.Entity("TrashVersionOne.Models.Order", b =>
-                {
-                    b.HasOne("TrashVersionOne.Models.ProductDetails")
-                        .WithMany("Orders")
-                        .HasForeignKey("ProductDetailsId");
                 });
 #pragma warning restore 612, 618
         }
